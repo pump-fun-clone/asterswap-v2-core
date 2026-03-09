@@ -12,15 +12,17 @@
 | `UniswapV2Pair` | 0.5.16 | AMM pair — swap, mint, burn, skim, sync |
 | `UniswapV2ERC20` | 0.5.16 | LP token (ERC20 + EIP-2612 permit) |
 
-## Dev Environment
+## Running Tests (Docker)
 
-Requires **Node 14** (uses `ethereum-waffle`). Newer Node versions are incompatible with native deps.
+The original toolchain (`ethereum-waffle`) requires **Node 12 + Python 3.7**.
+Docker handles this automatically.
 
 ```bash
-nvm use 14   # or: nvm install 14
-yarn install
-yarn compile
-yarn test
+# Run tests
+docker compose run --rm test
+
+# Compile only
+docker compose run --rm compile
 ```
 
 ## Source
