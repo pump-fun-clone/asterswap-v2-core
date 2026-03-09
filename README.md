@@ -1,24 +1,28 @@
-# Uniswap V2
+# AsterSwap V2 Core
 
-[![Actions Status](https://github.com/Uniswap/uniswap-v2-core/workflows/CI/badge.svg)](https://github.com/Uniswap/uniswap-v2-core/actions)
-[![Version](https://img.shields.io/npm/v/@uniswap/v2-core)](https://www.npmjs.com/package/@uniswap/v2-core)
+**Original, unmodified** Uniswap V2 Core contracts for AsterSwap on Aster L1.
 
-In-depth documentation on Uniswap V2 is available at [uniswap.org](https://uniswap.org/docs).
+> ⚠️ Contract code is preserved exactly as audited. Do not modify `contracts/`.
 
-The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/browse/@uniswap/v2-core@latest/).
+## Contracts
 
-# Local Development
+| Contract | Solidity | Description |
+|---|---|---|
+| `UniswapV2Factory` | 0.5.16 | Deploys pairs via CREATE2 |
+| `UniswapV2Pair` | 0.5.16 | AMM pair — swap, mint, burn, skim, sync |
+| `UniswapV2ERC20` | 0.5.16 | LP token (ERC20 + EIP-2612 permit) |
 
-The following assumes the use of `node@>=10`.
+## Dev Environment
 
-## Install Dependencies
+Requires **Node 14** (uses `ethereum-waffle`). Newer Node versions are incompatible with native deps.
 
-`yarn`
+```bash
+nvm use 14   # or: nvm install 14
+yarn install
+yarn compile
+yarn test
+```
 
-## Compile Contracts
+## Source
 
-`yarn compile`
-
-## Run Tests
-
-`yarn test`
+Fork of [Uniswap/v2-core](https://github.com/Uniswap/v2-core).
